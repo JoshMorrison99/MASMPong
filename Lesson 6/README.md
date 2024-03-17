@@ -1,6 +1,6 @@
 ### Lesson 6
 
-We start the lesson by replacing the code to draw the call with a function call to draw the ball.
+We start the lesson by replacing the code to draw the call with a function call to draw the ball.<br/>
 - PROC is a directive used to define a procedure in assembly language. A procedure is a block of code that performs a specific task and can be called from other parts of the program. In your code, MAIN PROC FAR and DRAW_BALL PROC NEAR are examples of using the PROC directive to define procedures named MAIN and DRAW_BALL, respectively.
 - NEAR is used as a procedure modifier to specify the calling convention for the procedure. In x86 assembly language, NEAR typically indicates that the procedure uses the near calling convention. The near calling convention means that the procedure and its caller share the same code segment (CS) and data segment (DS). It's suitable for small procedures that don't need to access data in a different segment.
 ```
@@ -54,13 +54,13 @@ END
 <br/>
 <br/>
 
-**2) What is DRAW_BALL_HORIZONTAL? Is it a Procedure?**
+**2) What is DRAW_BALL_HORIZONTAL? Is it a Procedure?**<br/>
 Yes, DRAW_BALL_HORIZONTAL is indeed a procedure in the provided assembly language code snippet. It's a part of the DRAW_BALL procedure and is used to draw a ball horizontally by writing pixels to the screen.
 
 <br/>
 <br/>
 
-**3) Explained**
+**3) Explained**<br/>
 - The following code snippet is basically a double nested `for` loop that will draw an 8x8 square of pixels.
 ```
 DRAW_BALL PROC NEAR
