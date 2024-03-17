@@ -38,19 +38,24 @@ CODE SEGMENT PARA 'CODE'
 
             MOV TIME_AUX,DL ;update time
             
-            MOV AX,BALL_VELOCITY_X
-            ADD BALL_X,AX  ;increment the BALL_X value by BALL_VELOCITY_X (BALL_X = BALL_X + 2)
-
-            MOV AX,BALL_VELOCITY_Y
-            ADD BALL_Y,AX  ;increment the BALL_Y value by BALL_VELOCITY_Y (BALL_Y = BALL_Y + 2)
-
             CALL CLEAR_SCREEN
+            CALL MOVE_BALL
             CALL DRAW_BALL
 
             JMP CHECK_TIME  ;after everything checks time again
 
         RET
     MAIN ENDP
+
+    MOVE_BALL PROC NEAR
+
+        MOV AX,BALL_VELOCITY_X
+        ADD BALL_X,AX  ;increment the BALL_X value by BALL_VELOCITY_X (BALL_X = BALL_X + 2)
+
+        MOV AX,BALL_VELOCITY_Y
+        ADD BALL_Y,AX  ;increment the BALL_Y value by BALL_VELOCITY_Y (BALL_Y = BALL_Y + 2)
+
+    MOVE_BALL ENDP
 
     CLEAR_SCREEN PROC NEAR
         MOV AH,00h      ;set the configuration to video mode
