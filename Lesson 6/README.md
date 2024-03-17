@@ -95,3 +95,5 @@ DRAW_BALL PROC NEAR
 
 ![image](https://github.com/JoshMorrison99/MASMPong/assets/25315255/5bb8ba95-8286-477d-b64a-1c6b2e384e14)
 
+**References**
+- https://www.youtube.com/watch?v=u9EoHYID6f4&list=PLvpbDCl_H7mfgmEJPl1bTHlH5g-f0kWDM&index=6&ab_channel=ProgrammingDimension
