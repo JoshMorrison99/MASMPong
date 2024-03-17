@@ -1,6 +1,6 @@
 ### Lesson 2
 
-**1) What is DB?**
+**1) What is DB?**<br/>
 In MASM (Microsoft Macro Assembler) and x86 assembly language programming, DB stands for "Define Byte." It is a directive used to allocate memory and define one or more bytes of data in a data segment.
 For example, suppose you want to define a byte variable named MyByte with an initial value of 42 (decimal). You can do so using DB as follows:
 
@@ -11,7 +11,7 @@ MyByte DB 42
 <br/>
 <br/>
 
-**2) Memory Layout**
+**2) Memory Layout**<br/>
 ```
 ----------------------------------  <- Memory Address Space
 |       Stack Segment (STACK)     |
@@ -32,13 +32,13 @@ MyByte DB 42
 <br/>
 <br/>
 
-**3) What is PARA?**
+**3) What is PARA?**<br/>
 The PARA keyword in MASM indicates the use of the paragraph memory addressing scheme for a segment, where each paragraph is 16 bytes long.
 
 <br/>
 <br/>
 
-**4) What are other memory addressing schemes**
+**4) What are other memory addressing schemes**<br/>
 In MASM (Microsoft Macro Assembler) and x86 assembly language programming, there are several memory addressing schemes available, each with its characteristics and usage. Here are some of the commonly used memory addressing schemes:
 
 BYTE:
@@ -80,8 +80,7 @@ LINE:
 <br/>
 <br/>
 
-**5) What is INT**
-
+**5) What is INT**<br/>
 In assembly language programming for x86 processors, INT stands for "Interrupt." It is a processor instruction used to generate a software interrupt, which is a mechanism for triggering specific software routines called interrupt service routines (ISRs) or interrupt handlers.
 ```
 INT interrupt_number
