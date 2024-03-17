@@ -92,3 +92,6 @@ DRAW_BALL PROC NEAR
         RET
     DRAW_BALL ENDP
 ```
+
+![image](https://github.com/JoshMorrison99/MASMPong/assets/25315255/5bb8ba95-8286-477d-b64a-1c6b2e384e14)
+
