@@ -91,6 +91,53 @@ To summarize, without setting up the data segment register (DS) correctly using 
 
 > To answer the question, the stack isn't needed to get the data in BALL_X and BALL_Y.
 
+*Pixel when DS register knows the address of the Data Segment*
+![image](https://github.com/JoshMorrison99/MASMPong/assets/25315255/e7aceedb-f816-4f3b-b17e-eea67eb9f260)
+
+*Pixel when DS register DOES NOT know the address of the Data Segment*
+- The pixel doesn't appear in this boot because it is taking the value of whatever was previously in the DS register / the default value in the DS register. The value is trash data.
+```
+STACK SEGMENT PARA STACK
+    DB 64 DUP (' ')
+STACK ENDS
+
+DATA SEGMENT PARA 'DATA'
+
+    BALL_X DW 0Ah       ;set x=10
+    BALL_Y DW 0Ah       ;set y=10
+
+DATA ENDS
+
+CODE SEGMENT PARA 'CODE'
+
+    MAIN PROC FAR
+
+        MOV AH,00h      ;set the configuration to video mode
+        MOV AL,12h      ;choose the video mode
+        INT 10h         ;execute the configuration
+
+        MOV AH,0Bh      ;set the configuration to background color
+        MOV BH,00h      ;set the configuration to background color
+        MOV BL,04h      ;set background color to red
+        INT 10h         ;execute the configuration
+
+        MOV AH,0Ch      ;set the configuration to writing a pixel
+        MOV AL,0Fh      ;choose the pixel color to be white
+        MOV BH,00h      ;set the page number
+        MOV CX,BALL_X      
+        MOV DX,BALL_Y      
+        INT 10h         ;execute the configuration
+        
+        RET
+    MAIN ENDP
+
+CODE ENDS
+END
+```
+![image](https://github.com/JoshMorrison99/MASMPong/assets/25315255/77b76e15-1c34-4eb0-a8ae-73e823f681a5)
+
+
+
 **References**
 - https://www.youtube.com/watch?v=qUGChq5sPcA&list=PLvpbDCl_H7mfgmEJPl1bTHlH5g-f0kWDM&index=5&ab_channel=ProgrammingDimension
 - https://www.tek-tips.com/viewthread.cfm?qid=717198
